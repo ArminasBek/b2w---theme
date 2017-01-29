@@ -1,0 +1,553 @@
+// COLOR REFERENCES
+
+$green: #79b044
+$salmon: #dd5638
+$blue-gray: #3e4249
+
+// GENERAL
+
+body
+	margin-top: 50px
+	font-family: 'Raleway', Helvetica, sans-serif
+	font-size: 16px
+	background: url('/assets/img/tile.jpg') top left repeat
+	-webkit-font-smoothing: antialiased
+	text-rendering: optimizelegibility
+
+// GLOBAL
+
+h1,h2,h3,h4,h5,h6
+	font-weight: bold
+
+h1
+	font-size: 3em
+
+h1,h2
+	margin: 0 0 40px
+
+h3
+	margin: 20px 0
+
+h4
+	font-size: 18px
+
+p
+	margin: 0 0 15px
+
+p.lead
+	font-weight: normal
+
+button, input, .btn, a.btn
+	-webkit-font-smoothing: antialiased
+	text-rendering: optimizelegibility
+	color: #fff
+
+a
+	color: $salmon
+
+	&:hover
+		text-decoration: none
+		color: $salmon
+		font-weight: bold
+
+
+.btn 
+	font-weight: bold
+
+.btn-danger
+	background-color: $salmon	
+	border-collapse: #d95131
+
+.btn-success
+	background: #79b044
+	border: none
+
+	&:hover
+		background: #6a9b3d
+		border: #6a9b3d
+
+img
+	max-width: 100%
+
+.modal-content
+	background: url('/assets/img/tile.jpg') top left repeat
+
+.badge.social 
+	background: #ccc
+	font-size: 24px
+	height: 40px
+	width: 40px
+	text-align: center
+	line-height: 40px
+	margin: 0 5px 20px 0
+	padding: 0
+	-webkit-border-radius: 50px	
+	-moz-border-radius: 50px
+	border-radius: 50px
+	color: #fff
+
+.badge.social.twitter:hover
+	background: #55acee
+
+.badge.social.facebook:hover
+	background: #3b5998
+
+.badge.social.gplus:hover
+	background: #db4b39
+
+blockquote
+	padding: 0 
+	border: none
+	font-style: italic
+	text-align: left
+
+	&:before
+		display: none
+
+	cite 
+		display: block
+		color: #777
+		margin: 15px 0 0 0
+
+
+// HERO
+
+#hero
+	background: url('/assets/img/hero-bg.jpg') 50% 0 repeat fixed
+	min-height: 500px
+	padding: 40px 0
+	color: #fff
+
+	.hero-text
+		margin-top: 30px
+
+	article
+		text-align: center
+
+#price-timeline
+	margin: 30px 0 60px
+	text-align: center
+
+	h4
+		margin: 0 0 10px
+
+		small
+			color: #fff
+			font-weight: bold
+			display: block
+			font-size: 10px
+
+	.price
+		display: inline-block
+		margin: 0 2% 0 0 
+		width: 30%
+		background: $blue-gray
+		padding: 10px 20px 30px
+		position: relative
+		vertical-align: top
+
+		span
+			background: #101010
+			display: block
+			height: 70px
+			width: 70px
+			border-radius: 100%
+			text-align: center
+			line-height: 70px
+			font-weight: bold
+			font-size: 24px
+			position: absolute
+			bottom: -35px
+			left: 50%
+			margin-left: -35px
+
+
+	.price.active
+		background: $salmon
+
+// LAYOUT
+
+section 
+	padding: 80px 0
+
+	h2
+		margin: 20px 0 40px
+
+	h3
+		margin: 30px 0 10px
+
+.main-content
+	padding: 20px 0
+
+#primary
+	padding-top: 40px
+	padding-bottom: 40px
+
+.feature-image
+	display: table
+	width: 100%
+
+	h1
+		display: table-cell
+		vertical-align: middle
+		text-align: center
+		color: #fff
+
+.feature-image-default
+	background: url("/assets/img/stuff-feature.jpg") no-repeat 
+	background-size: cover
+
+.feature-image-default-alt
+	background: url("/assets/img/hipster-stuff.jpg") no-repeat 
+	background-size: cover
+
+.section-header
+	text-align: center
+
+#optin
+	background: $blue-gray
+	padding: 20px 0
+	color: #fff
+	font-size: 1.2em
+
+	p 
+		margin: 7px 0 0 0
+
+#who-benefits
+	background: #fff
+
+#course-features
+	background: $blue-gray
+	color: #fff
+	text-align: center
+
+#featurette
+	background: url('/assets/img/stuff-bg.jpg') 50% 100% repeat fixed
+	background-size: cover
+	text-align: center
+	color: #fff
+
+#instructor 
+	background: white url('/assets/img/brad-elvis.png') 90% -10px no-repeat
+
+	.instructor-text
+		background: rgba(255,255,255, 0.8)
+
+	h2
+		margin: 0 0 20px
+
+	.num
+		display: table
+		font-size: 30px
+		font-weight: bold
+		color: #fff
+		line-height: 24px
+		height: 140px
+		width: 140px
+		text-align: center
+		background: $salmon
+		border-radius: 100%
+
+		.num-content
+			display: table-cell
+			vertical-align: middle
+
+		span
+			display: block
+			font-size: 20px
+			font-weight: normal
+
+#kudos
+	text-align: center
+
+	.testimonial
+		margin-bottom: 60px
+
+		img
+			border-radius: 50%
+
+#signup 
+	text-align: center
+	background: url('/assets/img/hipster-stuff.jpg') center center repeat fixed
+	background-size: cover
+	color: #fff
+	padding: 140px 0
+
+	h2
+		font-weight: normal
+
+		strong
+			border-bottom: 2px solid $salmon
+
+	.btn
+		font-size: 24px
+
+footer
+	background: $blue-gray
+	color: #fff
+	padding: 20px 0 10px
+	font-size: 12px
+
+	a:hover
+		color: $salmon
+
+	p 
+		margin: 0
+
+	a:link, a:visited
+		color: #fff
+
+	li.signup-link, a
+		color: $salmon	
+
+// BLOG STYLES
+
+.post, 
+.widget,
+#comments	
+	position: relative
+	border: solid 1px #ddd
+	background: #fff
+	margin: 0 0 40px
+	-webkit-border-radius: 4px
+	-moz-border-radius: 4px
+	border-radius: 4px
+
+	header, 
+	.post-excerpt,
+	.post-body,
+	.comments-wrap
+		padding: 20px
+
+	header h3, header h1
+		margin: 0 0 15px
+		padding: 0 0 15px
+		border-bottom: solid 1px #ddd
+
+	header h1
+		font-size: 24px
+
+.post-image
+	height: auto
+
+.post-details
+	font-size: 12px
+	width: 90%
+
+	i.fa 
+		padding-left: 10px
+
+	i.fa:first-child
+		padding: 0
+
+// WIDGETS
+
+.widget
+	padding: 20px
+
+	h4
+		margin: 0 0 10px
+		padding: 0 0 10px
+		border-bottom: solid 1px #ddd
+	
+	ul 	
+		list-style: none
+		margin: 0
+		padding: 0
+
+		li
+			margin: 0 0 5px
+
+			&:hover
+				position: relative
+				left: 1px
+// COMMENTS
+
+.post-comments-badge
+	height: 70px
+	width: 70px
+	position: absolute
+	top: 25px
+	right: 20px
+	border: none
+	-webkit-border-radius: 100%
+	-moz-border-radius: 100%
+	border-radius: 100%
+	background: $green
+	text-align: center
+	display: table
+
+	&:hover
+		background-color: #8bc653
+
+	a
+		display: table-cell
+		vertical-align: middle
+		color: #fff
+		font-size: 20px
+		list-height: 20px
+
+	i.fa
+		display: block
+		font-size: 15px
+		padding: 0
+		margin-bottom: 4px
+
+#comments
+	h3
+		text-align: center
+
+	h4
+		font-size: 1.3em
+
+	ol 	
+		list-style: none
+		padding: 0
+		margin: 0
+	
+		li
+			background: rgba(0,0,0,0.02)
+			padding: 10px 20px
+			margin: 10px 0
+			border-radius: 4px
+			border: solid 1px rgba(0,0,0,0.03)
+
+			ol.children
+				padding: 0
+				list-style: none
+				font-size: 0.96em
+
+#leave-comment
+	margin: 40px 0 0
+	padding: 20px 0 0
+	border-top: solid 1px #eee;
+
+// RESOURCES
+
+.resource	
+	width: 31.3333333%
+	float: left
+	margin: 0 3% 40px 0
+
+	&:nth-child(3n)
+		margin-right: 0
+
+
+
+
+
+// CUSTOM ICON SPRITES
+
+i.ci 	
+	display: inline-block
+	height: 40px
+	width: 40px
+	background: url('/assets/img/icon-sprite.png') no-repeat
+
+.ci.ci-computer
+	background-position: 0 0
+
+.ci.ci-watch
+	background-position: -40px 0
+
+.ci.ci-calendar
+	background-position: -80px 0
+
+.ci.ci-community
+	background-position: -120px 0
+
+.ci.ci-instructor
+	background-position: -160px 0
+
+.ci.ci-device
+	background-position: -200px 0
+
+// FORMS
+
+label
+	display: block
+	font-weight: bold
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+textarea
+	color: #666
+	border: 1px solid #ccc
+	border-radius: 3px
+	display: block
+	width: 100%
+	box-sizing: border-box
+	padding: 6px 12px
+
+input[type="submit"], 
+button[type="submit"]
+	display: inline-block
+	margin-bottom: 0
+	font-size: 18px
+	font-weight: bold
+	line-height: 1.33
+	text-align: center
+	white-space: nowrap
+	vertical-align: middle
+	cursor: pointer
+	user-select: none
+	background-image: none
+	border: none
+	border-radius: 6px
+
+	&:hover
+	 outline: none
+	 border: none
+	 background: #aaa
+
+.btn
+	white-space: normal
+
+// media quories
+
+@media screen and(max-width: 761px)
+	.logo
+		width: 50%
+
+	#optin p 
+		margin: 0 0 10px
+	
+	#featurette iframe
+		height: 240px
+
+	.resource
+		width: 48%
+		margin-right: 2%
+		min-height: 800px
+
+@media screen and(max-width: 568px)
+	#instructor .num
+		height: 100px
+		width: 100px
+		font-size: 22px
+
+		span
+			font-size: 16px	
+
+	.resource
+		width: 100%
+		margin-right: 0
+		min-height: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
