@@ -28,7 +28,10 @@ $features_section_title  = get_field('features_section_title');
 $features_section_body   = get_field('features_section_body');
 
 $project_feature_title  = get_field('project_feature_title');
-$project_fature_body  = get_field('project_feature_body');
+$project_fature_body    = get_field('project_feature_body');
+
+$video_section_title    = get_field('video_section_title');
+$video_section          = get_field('video_section');
 
 
 
@@ -182,8 +185,8 @@ get_header(); ?>
 			<div class="container">
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
-						<h2>Watch how people are awesome</h2>
-						<iframe width="100%" height="415" src="https://www.youtube.com/embed/RKm_nUtzuDE" frameborder="0" allowfullscreen></iframe>
+						<h2><?php echo $video_section_title; ?></h2>
+						<iframe width="100%" height="415" src=""<?php echo $video_section; ?>" frameborder="0" allowfullscreen></iframe>
 					</div>
 				</div>
 			</div>
