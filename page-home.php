@@ -25,7 +25,12 @@ $who_section_body			 = get_field('who_section_body');
 
 $features_section_img    = get_field('features_section_image');
 $features_section_title  = get_field('features_section_title');
-$features_section_body  = get_field('features_section_body');
+$features_section_body   = get_field('features_section_body');
+
+$project_feature_title  = get_field('project_feature_title');
+$project_fature_body  = get_field('project_feature_body');
+
+
 
 
 
@@ -151,24 +156,22 @@ get_header(); ?>
 		<!-- PROJECT FEATURES -->
 		<section id="project-features" class="text-center">
 			<div class="container">
-				<h2>Final Project Features</h2>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae non optio delectus ducimus ratione tempore voluptates natus maiores omnis! Officia deleniti totam ea commodi optio, corporis ullam, porro eum hic.</p>
+				<h2><?php echo $project_feature_title; ?></h2>
+				<p class="lead"><?php echo $project_fature_body; ?></p>
 				<div class="row">
-					<div class="col-sm-4">
-						<img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-design.png" alt="Design">
-						<h3>Sexy &amp; Modern Design</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis sed delectus voluptatum harum facere dolorum, itaque earum sit quos nam cum.</p>
-					</div>
-					<div class="col-sm-4">
-						<img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-code.png" alt="Design">
-						<h3>Quality HTML5 &amp; CSS3 </h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis sed delectus voluptatum harum facere dolorum, itaque earum sit quos nam cum.</p>
-					</div>
-					<div class="col-sm-4">
-						<img src="<?php bloginfo('stylesheet_directory');?>/assets/img/icon-design.png" alt="Design">
-						<h3>Wordpress</h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis sed delectus voluptatum harum facere dolorum, itaque earum sit quos nam cum.</p>
-					</div>
+						<?php $loop = new WP_Query( array('post_type' => 'project_features', 'orderby' => 'post_id', 'order' => 'ASC') ); ?>
+
+						<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+							<div class="col-sm-4">
+								<?php 
+									if ( has_post_thumbnail()) {
+										the_post_thumbnail();
+									}
+								 ?>
+								<h3><?php the_title(); ?></h3>
+								<p><?php the_content(); ?></p>
+							</div>
+						<?php endwhile; ?>
 				</div>
 			</div> <!-- end of container -->
 
