@@ -269,50 +269,23 @@ get_header(); ?>
 				<div class="row">
 					<div class="col-sm-8 col-sm-offset-2">
 						<h2>What People Are Saying About Brad</h2>
-
-						<div class="row testimonial">
+						<?php $loop = new WP_Query( array('post_type' => 'testimonial', 'orderby' => 'post_id', 'order' => 'ASC') ); ?>
+						<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+							<div class="row testimonial">
 							<div class="col-sm-4">
-								<img src="<?php bloginfo('stylesheet_directory');?>/assets/img/brennan.jpg" alt="Brennan">
+								<?php 
+									if ( has_post_thumbnail() ) {
+										the_post_thumbnail( array(200, 200) );
+									}
+								 ?>
 							</div>
 							<div class="col-sm-8">
 								<blockquote>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate reprehenderit unde perspiciatis velit maiores, laudantium veniam ipsum doloribus esse earum. Error ea deleniti placeat ullam hic molestias at. <cite>&mdash; Brennan, gaduate of all of Brad's course</cite>
+									<?php the_content(); ?><cite>&mdash; <?php the_title(); ?></cite>
 								</blockquote>
 							</div>
-						</div>
-						<!-- testimonial -->
-						<div class="row testimonial">
-							<div class="col-sm-4">
-								<img src="<?php bloginfo('stylesheet_directory');?>/assets/img/ben.png" alt="Brennan">
-							</div>
-							<div class="col-sm-8">
-								<blockquote>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate reprehenderit unde perspiciatis velit maiores, laudantium veniam ipsum doloribus esse earum. Error ea deleniti placeat ullam hic molestias at. <cite>&mdash; Benn, gaduate of all of Brad's course</cite>
-								</blockquote>
-							</div>
-						</div>
-						<!-- testimonial -->
-						<div class="row testimonial">
-							<div class="col-sm-4">
-								<img src="<?php bloginfo('stylesheet_directory');?>/assets/img/aj.png" alt="Brennan">
-							</div>
-							<div class="col-sm-8">
-								<blockquote>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate reprehenderit unde perspiciatis velit maiores, laudantium veniam ipsum doloribus esse earum. Error ea deleniti placeat ullam hic molestias at. <cite>&mdash; AJ, gaduate of all of Brad's course</cite>
-								</blockquote>
-							</div>
-						</div>
-						<!-- testimonial -->
-						<div class="row testimonial">
-							<div class="col-sm-4">
-								<img src="<?php bloginfo('stylesheet_directory');?>/assets/img/ernest.png" alt="Brennan">
-							</div>
-							<div class="col-sm-8">
-								<blockquote>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cupiditate reprehenderit unde perspiciatis velit maiores, laudantium veniam ipsum doloribus esse earum. Error ea deleniti placeat ullam hic molestias at. <cite>&mdash; Ernest, gaduate of all of Brad's course</cite>
-								</blockquote>
-							</div>
-						</div>
+						</div>					
+						<?php endwhile; ?>
 						<!-- testimonial -->
 					</div>
 				</div>
