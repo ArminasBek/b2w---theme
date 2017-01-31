@@ -7,12 +7,12 @@ $thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 <!-- get feature image from feature image -->
 <?php if(has_post_thumbnail()) { ?>
 	<section class="feature-image" style="background:url('<?php echo$thumbnail_url; ?>') no-repeat; background-size: cover;" data-type="background" data-speed="2">
-		<h1 class="page-title">Resources</h1>
+		<h1 class="page-title"><?php echo the_title(); ?></h1>
 	</section>
 <?php } else { ?>
 <!-- //fallback -->
 <section class="feature-image feature-image-default" data-type="background" data-speed="2">
-	<h1 class="page-title">Resources</h1>
+	<h1 class="page-title"><?php echo the_title(); ?></h1>
 </section>
 <?php } ?>
 <!-- MAIN CONTENT -->
@@ -20,8 +20,9 @@ $thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 	<div class="row" id="primary">
 		<div id="content" class="col-sm-12">
 			<section class="main-content">
-				<p class="lead">Welcome to the Bootstrap to Wordpress resources page, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel, cupiditate ratione quisquam sapiente laborum doloremque, alias consequatur, error animi nostrum ab officia! Harum aliquam laborum odio, facilis tenetur animi reiciendis?</p>
-				<p><em>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis sunt exercitationem labore, magnam rem totam ex voluptas modi aliquid et veniam repellendus odio eum nostrum voluptatem nesciunt, dignissimos provident. Assumenda.</em></p>
+				<?php while (have_posts()) : the_post(); ?>
+					<?php the_content(); ?>
+				<?php endwhile;  ?>
 				<hr>
 				<div class="resource-row clearfix">
 					<div class="resource">
