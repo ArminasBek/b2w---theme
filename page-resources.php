@@ -3,6 +3,7 @@
 get_header();
 
 $thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
+
 ?>
 <!-- get feature image from feature image -->
 <?php if(has_post_thumbnail()) { ?>
@@ -23,29 +24,25 @@ $thumbnail_url = wp_get_attachment_url(get_post_thumbnail_id($post->ID));
 				<?php while (have_posts()) : the_post(); ?>
 					<?php the_content(); ?>
 				<?php endwhile;  ?>
+
+				<?php $loop = new WP_Query(array('post_type' => 'resource', 'orderby' => 'post_id', 'order' => 'ASC')); ?>
 				<hr>
 				<div class="resource-row clearfix">
-					<div class="resource">
-						<img src="/assets/img/dropbox-logo.jpg" alt="dropbox">
-						<h3><a href="http://justhost.com">Justhost</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quidem nostrum nulla, saepe voluptates. Ipsum omnis velit, voluptas reiciendis, praesentium perferendis voluptatibus voluptatem minus mollitia ea ducimus temporibus, qui blanditiis!</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto molestiae aperiam debitis eos dolor voluptas maxime corporis ad facere atque, explicabo mollitia alias dolorem excepturi, tempora nemo dolore delectus facilis.</p>
-						<a href="http://justhost.com" class="btn btn-success">Get started with Jushost</a>
-					</div> <!-- ./ resource -->
-					<div class="resource">
-						<img src="/assets/img/coda2-logo.jpg" alt="JustHost">
-						<h3><a href="http://coda2.com">Coda 2</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quidem nostrum nulla, saepe voluptates. Ipsum omnis velit, voluptas reiciendis, praesentium perferendis voluptatibus voluptatem minus mollitia ea ducimus temporibus, qui blanditiis!</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto molestiae aperiam debitis eos dolor voluptas maxime corporis ad facere atque, explicabo mollitia alias dolorem excepturi, tempora nemo dolore delectus facilis.</p>
-						<a href="http://coda2.com" class="btn btn-success">Get started with Coda 2</a>
-					</div> <!-- ./ resource -->
-					<div class="resource">
-						<img src="/assets/img/dropbox-logo.jpg" alt="dropbox">
-						<h3><a href="http://dropbox.com">Dropbox</a></h3>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima quidem nostrum nulla, saepe voluptates. Ipsum omnis velit, voluptas reiciendis, praesentium perferendis voluptatibus voluptatem minus mollitia ea ducimus temporibus, qui blanditiis!</p>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto molestiae aperiam debitis eos dolor voluptas maxime corporis ad facere atque, explicabo mollitia alias dolorem excepturi, tempora nemo dolore delectus facilis.</p>
-						<a href="http://dropbox.com" class="btn btn-success">Get started with Dropbox</a>
-					</div> <!-- ./ resource -->
+					<?php while( $loop->have_posts()): $loop->the_post(); ?>
+						<?php 
+							$resource_image = get_field('resource_image');
+							$resource_url   = get_field('resource_url');
+							$button_text    = get_field('button_text');
+					  ?>
+						<div class="resource">
+							<img src="<?php echo $resource_image[url]; ?>" alt="<?php echo $resource_image[alt]; ?>">
+							<h3><a href="<?php echo $resource_url; ?>"><?php the_title(); ?></a></h3>
+							<?php the_content(); ?>
+							<?php if(!empty($button_text)) :?>
+								<a href="<?php echo $resource_url; ?>" class="btn btn-success"><?php echo $button_text; ?></a>
+							<?php endif; ?>
+						</div> <!-- ./ resource -->
+					<?php endwhile; ?>	
 				</div>
 			</section>
 		</div>

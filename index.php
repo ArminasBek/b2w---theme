@@ -13,6 +13,17 @@
  */
 
 get_header(); ?>
+<section class="feature-image feature-image-default-alt" data-type="background" data-speed="2">
+	<h1 class="page-title">Blog</h1>
+</section>
+<div class="container">
+	<div class="row" id="primary">
+		<main id="content" class="col-sm-8" role="main">
+
+		</main> <!-- Content -->
+	</div> <!-- Primary -->
+</div> <!-- Container -->
+
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
