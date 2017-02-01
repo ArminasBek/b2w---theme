@@ -19,16 +19,7 @@ get_header(); ?>
 <div class="container">
 	<div class="row" id="primary">
 		<main id="content" class="col-sm-8" role="main">
-
-		</main> <!-- Content -->
-	</div> <!-- Primary -->
-</div> <!-- Container -->
-
-
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
+			<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
@@ -59,9 +50,15 @@ get_header(); ?>
 
 		endif; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
 
+
+		</main> <!-- Content -->
+			<aside class="col-sm-4">
+				<?php get_sidebar(); ?>
+			</aside>
+
+	</div> <!-- Primary -->
+</div> <!-- Container -->
 <?php
-get_sidebar();
+
 get_footer();
