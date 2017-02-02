@@ -735,6 +735,20 @@ footer {
   padding: 20px 0 0;
   border-top: solid 1px #eee; }
 
+/* Specific WP comments styles*/
+#comments footer {
+  background: none;
+  color: inherit;
+}
+
+#comments footer a {
+  color: inherit;
+}
+
+#comments .comment-metadata {
+  margin: 10px 0 0;
+}
+
 .resource {
   width: 31.3333333%;
   float: left;
