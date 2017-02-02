@@ -68,6 +68,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 ## Menus
 --------------------------------------------------------------*/
 
+.navbar-nav > li.current_page_item a,
+.navbar-nav > li.current_page_parrent a {
+  color: #fff;
+  backgorund: black;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {

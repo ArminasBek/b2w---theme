@@ -37,13 +37,13 @@
 				</div>
 				<div class="col-sm-6">
 					<nav>
-						<ul class="list-unstyled list-inline">
-							<li><a href="/"></a>Home</li>
-							<li><a href="/"></a>Blog</li>
-							<li><a href="/"></a>Resources</li>
-							<li><a href="/"></a>Contact</li>
-							<li class="signup-link"><a href=""></a>Sign up now</li>
-						</ul>
+						<?php
+						wp_nav_menu( array(
+								'theme_location' => 'footer',
+								'container'			 => 'nav',
+								'menu_class'	   => 'list-unstyled list-inline'
+							));
+						?>
 					</nav>
 				</div>
 				<div class="col-sm-3">
@@ -69,7 +69,7 @@
 								<label for="subscribe-email" class="sr-only">Your email address</label>
 								<input type="text" class="form-control" id="subscribe-name" placeholder="Your email address">
 							</div>
-							<input type="submit" class="btn btn-danger" value="S  ubscribe!">
+							<input type="submit" class="btn btn-danger" value="Subscribe!">
 						</form>
 					</div>
 				</div>
