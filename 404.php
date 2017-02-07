@@ -37,6 +37,22 @@ get_header(); ?>
 						</div> <!-- ./ resource -->
 							<?php endwhile; ?>	
 						</div>
+						<h3>Categorie</h3>
+						<p>..or maybe a popular category?</p>
+						<div class="widget widget_categories">
+							<h4 class="widget-title">MOst Used Categories</h4>
+							<ul>
+								<?php 
+									wp_list_categories(array (
+											'orderby' 	 => 'count',
+											'order'   	 => 'DESC',
+											'show_count' => 1,
+											'title_li'   => '',
+											'number'     => 10
+										));
+								 ?>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</main>
