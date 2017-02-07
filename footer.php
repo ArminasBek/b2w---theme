@@ -47,7 +47,7 @@
 					</nav>
 				</div>
 				<div class="col-sm-3">
-					<div class="pull-right">2017</div>
+					<div class="pull-right"><?php bloginfo('name'); ?> <?php echo date('Y'); ?></div>
 				</div>
 			</div>
 		</footer>

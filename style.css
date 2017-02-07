@@ -625,6 +625,8 @@ footer {
   footer li.signup-link, footer a {
     color: #dd5638; }
 
+
+
 .post,
 .widget,
 #comments {
@@ -831,6 +833,10 @@ button[type="submit"] {
 
 .btn {
   white-space: normal; }
+
+.signup-link  { 
+  color: #dd5638;
+}
 
 @media screen and (max-width: 761px) {
   .logo {
